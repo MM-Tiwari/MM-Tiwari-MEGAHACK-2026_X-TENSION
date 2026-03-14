@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Poppins:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+body {
+  @apply bg-[#0f172a] text-slate-200 font-sans antialiased overflow-x-hidden min-h-screen relative;
+  background: radial-gradient(circle at 50% 50%, #1e1b4b 0%, #0f172a 100%);
+}
+
+.bg-animated-mesh {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -10;
+  overflow: hidden;
+  background: #0f172a;
+}
+
+.mesh-blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.4;
+  animation: blob 20s infinite alternate;
+}
+
+.mesh-blob-1 {
+  width: 600px;
+  height: 600px;
+  background: #9d50bb;
+  top: -10%;
+  left: -10%;
+}
+
+.mesh-blob-2 {
+  width: 500px;
+  height: 500px;
+  background: #2196f3;
+  bottom: -10%;
+  right: -10%;
+  animation-delay: -5s;
+}
+
+.mesh-blob-3 {
+  width: 400px;
+  height: 400px;
+  background: #dd2476;
+  top: 40%;
+  left: 30%;
+  animation-delay: -10s;
+}
+
+.glass-panel {
+  @apply bg-white/5 backdrop-blur-2xl border border-white/10 shadow-[0_8px_32px_0_rgba(0,0,0,0.37)];
+}
+
+.glass-card {
+  @apply bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl hover:bg-white/10 transition-all duration-500 hover:border-white/20 hover:shadow-2xl hover:shadow-primary/20;
+}
+
+.btn-vibrant {
+  @apply relative overflow-hidden px-6 py-3 rounded-2xl font-black uppercase tracking-wider text-sm transition-all duration-300 active:scale-95 disabled:opacity-50 flex items-center justify-center gap-2;
+}
+
+.btn-vibrant-purple {
+  background: linear-gradient(135deg, #9d50bb 0%, #dd2476 100%);
+  @apply text-white shadow-[0_10px_20px_-5px_rgba(157,80,187,0.5)] hover:shadow-[0_15px_30px_-10px_rgba(157,80,187,0.7)] hover:-translate-y-1;
+}
+
+.btn-vibrant-blue {
+  background: linear-gradient(135deg, #2196f3 0%, #10b981 100%);
+  @apply text-white shadow-[0_10px_20px_-5px_rgba(33,150,243,0.5)] hover:shadow-[0_15px_30px_-10px_rgba(33,150,243,0.7)] hover:-translate-y-1;
+}
+
+.btn-vibrant-orange {
+  background: linear-gradient(135deg, #ff512f 0%, #dd2476 100%);
+  @apply text-white shadow-[0_10px_20px_-5px_rgba(255,81,47,0.5)] hover:shadow-[0_15px_30px_-10px_rgba(255,81,47,0.7)] hover:-translate-y-1;
+}
+
+/* Typography styles */
+h1, h2, h3, .font-heading {
+  font-family: 'Space Grotesk', sans-serif;
+  @apply tracking-tight font-black;
+}
+
+.font-body {
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Hide scrollbar */
+.hide-scrollbar::-webkit-scrollbar { display: none; }
+.hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* Custom Badge */
+.badge-vibrant {
+  @apply px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-widest border border-white/10 backdrop-blur-md;
+}
